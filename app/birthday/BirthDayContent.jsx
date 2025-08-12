@@ -1,16 +1,13 @@
-import { motion } from "framer-motion";
+import SectionOne from "../components/screen/SectioonOne";
+import SectionTwo from "../components/screen/SectionTwo";
+import SectionThree from "../components/screen/sectionThree";
 
-const BirthDayContent = () => {
+export default function BirthdayPage() {
   return (
-    <motion.div
-      className="flex items-center justify-center h-screen text-blue-800 text-center bg-yellow-100"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
-      <h1 className="text-5xl font-bold">❤️ Happy BirthDay! 🎉</h1>
-    </motion.div>
+    <>
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+    </>
   );
-};
-
-export default BirthDayContent;
+}

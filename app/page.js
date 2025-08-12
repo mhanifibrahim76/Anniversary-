@@ -6,9 +6,9 @@ import BirthDay from "./birthday/BirthDay"
 
 export default function Home() {
   return (
-    <div>
+    <main className="bg-white">
       <Anniversary />
       <BirthDay />
-    </div>
+    </main>
   )
 }

@@ -1,17 +1,15 @@
 import { motion } from 'framer-motion'
-import Card from '../components/Card'
+import Home from '../components/screen/AnnivHome'
+import Gallery from '../components/screen/AnnivGallery'
+import FlipBook from '../components/screen/AnnivBook'
 
 const AnniversaryContent = () => {
   return (
-    <motion.div
-      className="flex items-center justify-center h-screen text-blue-800 text-center bg-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
-      <Card />
-      {/* Hori => Miyamura => Together With Animation */}
-    </motion.div>
+    <div>
+      <Home />
+      <Gallery />
+      <FlipBook />
+    </div>
   )
 }
 

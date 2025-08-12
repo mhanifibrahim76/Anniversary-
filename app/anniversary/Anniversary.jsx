@@ -12,7 +12,7 @@ const Anniversary = () => {
     const interval = setInterval(() => {
       const now = new Date()
       const remaining = annivTime.getTime() - now.getTime()
-      setTimeLeft(0)
+      setTimeLeft(remaining)
       if (remaining <= 0) clearInterval(interval)
     }, 1000)
 

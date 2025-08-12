@@ -1,36 +1,35 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const Card = () => {
+const Card = ({ imageSrc, title, description }) => {
   const [flipped, setFlipped] = useState(false);
 
   return (
     <div
-      className=" h-96 w-64 perspective cursor-pointer"
+      className="w-48 h-64 perspective cursor-pointer" // kecilkan ukuran card
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
-       <motion.div
+      <motion.div
         className="relative w-full h-full"
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{ duration: 0.5 }}
-        style={{ transformStyle: 'preserve-3d' }}
+        style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front side */}
         <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden bg-white shadow-md">
           <img
-            src="/images/birthday/cake.png"
-            alt="Cake"
+            src={imageSrc}
+            alt={title}
             className="w-full h-full object-cover"
+            draggable={false}
           />
         </div>
 
         {/* Back side */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-pink-100 rounded-xl shadow-md flex flex-col justify-center items-center p-4">
-          <h2 className="text-xl font-bold text-pink-700 mb-2">Happy Birthday!</h2>
-          <p className="text-center text-gray-700">
-            Semoga harimu penuh cinta dan kebahagiaan! 🎉
-          </p>
+          <h2 className="text-lg font-bold text-pink-700 mb-2 text-center">{title}</h2>
+          <p className="text-center text-gray-700 text-sm">{description}</p>
         </div>
       </motion.div>
 
